@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+
+const ICON_FILE = './assets/icon.icns';
+const NOTIFIER_APP = './node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app';
+const NOTIFIER_INFO_FILE = `${NOTIFIER_APP}/Contents/Info.plist`;
+const BUNDLE_ID = 'com.electron.eggtimer';
+const BUNDLE_NAME = 'EggTimer';
+
+function replaceInFile(path, pattern, replacement) {
+  const content = fs.readFileSync(path).toString();
+
+  fs.writeFileSync(path, content.replace(pattern, replacement));
+}
+
+console.log('💉 Patching node-notifier package...');
+
+// Replace Terminal.icns
+fs.copyFileSync(ICON_FILE, `${NOTIFIER_APP}/Contents/Resources/Terminal.icns`);
+
+// Replace Info.plist
+replaceInFile(NOTIFIER_INFO_FILE, 'nl.superalloy.oss.terminal-notifier', BUNDLE_ID);
+replaceInFile(
+  NOTIFIER_INFO_FILE,
+  '<key>CFBundleName</key>\n\t<string>terminal-notifier</string>',
+  `<key>CFBundleName</key>\n\t<string>${BUNDLE_NAME}</string>`
+);

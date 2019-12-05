@@ -1,0 +1,57 @@
+{
+  "name": "eggtimer",
+  "description": "A simple Electron-based egg timer app.",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "electron",
+    "typescript",
+    "pomodoro",
+    "timer"
+  ],
+  "author": {
+    "name": "Vladimir Kartaviy",
+    "email": "vkartaviy@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "./scripts/patch",
+    "start": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "build": "NODE_ENV=production yarn compile && electron-builder",
+    "build:unpacked": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "lint": "eslint --cache --ext .ts src",
+    "lint:fix": "eslint --fix --ext .ts src"
+  },
+  "build": {
+    "productName": "EggTimer",
+    "asarUnpack": [
+      "./node_modules/node-notifier/vendor/mac.noindex/**"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^10.17.5",
+    "@types/node-notifier": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "electron": "^7.1.3",
+    "electron-builder": "^21.2.0",
+    "electron-webpack": "^2.7.4",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "postinstall-postinstall": "^2.0.0",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2"
+  },
+  "dependencies": {
+    "mobx": "^5.15.0",
+    "node-notifier": "^6.0.0",
+    "source-map-support": "^0.5.16"
+  }
+}
