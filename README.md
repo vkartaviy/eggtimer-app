@@ -25,10 +25,12 @@ yarn build
 
 ## Further improvements
 
+* [ ] GitHub potential security vulnerabilities in dependencies
 * [ ] GitHub releases workflow
-* [ ] Check for updates
-* [ ] Homebrew
+* [ ] Add screenshots to README 
+* [ ] Implement "Check for updates"
+* [ ] Install via Homebrew Cask
 
 ## License
 
-MIT © [Vladimir Kartaviy](http://github.com/vkartaviy).
+MIT © [Vladimir Kartaviy](http://github.com/vkartaviy)
