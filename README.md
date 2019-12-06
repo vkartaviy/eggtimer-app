@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/icon.png" height="148" />
+  <img src="./build/icon.png" height="148" />
 </p>
 <h2 align="center">Simple Egg Timer App for Pomodoro Technique</h2>
 <p align="center">Cross-platform application to open website or media in a floating window<p>

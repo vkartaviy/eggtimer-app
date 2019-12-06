@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const ICON_FILE = './assets/icon.icns';
+const ICON_FILE = './build/icon.icns';
 const NOTIFIER_APP = './node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app';
 const NOTIFIER_INFO_FILE = `${NOTIFIER_APP}/Contents/Info.plist`;
 const BUNDLE_ID = 'com.electron.eggtimer';
