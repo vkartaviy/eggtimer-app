@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "mobx": "^5.15.0",
-    "node-notifier": "^6.0.0",
+    "node-notifier": "^8.0.1",
     "source-map-support": "^0.5.16"
   }
 }
